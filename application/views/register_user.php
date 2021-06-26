@@ -11,14 +11,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	body{
 		background-color:black;
 	}
-	.first-screen {
-	/* display: flex; */
-	/* flex-direction: column; */
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	min-height: 100vh;
-	}
 	.btn{
 		width : 100%;
 	}
