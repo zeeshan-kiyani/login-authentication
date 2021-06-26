@@ -26,4 +26,16 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('register_user');
 	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	public function questions()
+	{
+		$this->load->view('questionair');
+	}
+	public function code_authentication()
+	{
+		$this->load->view('color_pattren');
+	}
 }
