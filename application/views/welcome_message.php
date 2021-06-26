@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  		<button type="button" class="btn  btn-lg  btn-outline-success">Login</button>
 		</div>
 		<div class="col-md-2 ">
-	  		<button type="button" class="btn btn-lg btn-outline-success">Register</button>
+	  		<button type="button" class="btn btn-lg btn-outline-success">Sign Up</button>
 		</div>
 	</div>
 </div>
