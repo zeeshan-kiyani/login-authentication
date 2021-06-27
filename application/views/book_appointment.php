@@ -48,7 +48,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body class="bg-body">
-
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Book Appointment</a>
+  <form class="form-inline my-2 my-lg-0">
+      <ul>
+          <li>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Action</button>
+        <button class="dropdown-item" type="button">Another action</button>
+        <button class="dropdown-item" type="button">Something else here</button>
+    </div>
+    </div>
+          </li>
+  <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>   
+      </ul>
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+</nav>
 	<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 	<span class="border border-dark">
 		<div class="bootstrap-iso bg-body">
