@@ -10,10 +10,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<style type="text/css">
-
+		.red{
+			width:90%;
+			border : 1px solid black;
+			margin-right:10px;
+			height:6rem ;
+			background-color : red;
+		}
+		.blue{
+			border : 1px solid black;
+			margin-right:10px;
+			width:90%;
+			height:6rem ;
+			background-color : blue;
+		}
+		.green{
+			border : 1px solid black;
+			margin-right:10px;
+			width:90%;
+			height:6rem ;
+			background-color : green;
+		}
 		.btn{
 			width : 100%;
 		}
+		
 		.bootstrap-iso
 		.formden_header h2,
 		.bootstrap-iso
@@ -22,6 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		form{font-family: Arial, Helvetica, sans-serif; color: black}
 		.bootstrap-iso form button, .bootstrap-iso
 		form button:hover{color: white !important;}.bootstrap-iso .form-control:focus { border-color: #2b90df;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6);} .asteriskField{color: red;}
+		
 	</style>
 </head>
 <body>
@@ -34,30 +56,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<label class="control-label requiredField" for="ckbox">
 							Select the pattren
 							<span class="asteriskField">
-        *
-       </span>
+								*
+							</span>
 						</label>
-						<div class=" ">
-							<label class="checkbox-inline">
-								<input name="ckbox" type="checkbox" value="Red"/>
-								Red
-							</label>
-							<label class="checkbox-inline">
-								<input name="ckbox" type="checkbox" value="Blue"/>
-								Blue
-							</label>
-							<label class="checkbox-inline">
-								<input name="ckbox" type="checkbox" value="Green"/>
-								Green
-							</label>
-						</div>
+					</div>	
+					<div class="row">
+						<div class="red col-md-2 offset-md-3"></div>
+						<div class="green col-md-2"></div>
+						<div class="blue col-md-2"></div>
 					</div>
 					<div class="form-group ">
 						<label class="control-label requiredField" for="pattren_code">
 							Color Pattern Code
 							<span class="asteriskField">
-        *
-       </span>
+							*
+						</span>
 						</label>
 						<input class="form-control" id="pattren_code" name="pattren_code" type="text"/>
 					</div>

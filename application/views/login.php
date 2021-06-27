@@ -22,21 +22,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		form{font-family: Arial, Helvetica, sans-serif; color: black}
 		.bootstrap-iso form button, .bootstrap-iso
 		form button:hover{color: white !important;}.bootstrap-iso .form-control:focus { border-color: #2b90df;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6);} .asteriskField{color: red;}
+		.sign-in{
+			position: relative;
+			margin-top: 15%;
+		}
+		.create-account{
+			text-align : right;
+		}
 	</style>
 </head>
 <body>
 <div class="bootstrap-iso">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12 offset-md-3">
+		<div class="row sign-in">
+			<div class="col-md-3 col-sm-3 col-xs-12 offset-md-4 ">
 				<form method="post" class = 'card p-3 bg-light'>
-					<h2> Sign in to continue </h2>
+					<center><h2 > Sign In </h2></center>
 					<div class="form-group ">
 						<label class="control-label requiredField" for="email">
 							Email
 							<span class="asteriskField">
-        *
-       </span>
+							*
+						</span>
 						</label>
 						<input class="form-control" id="email" name="email" type="text"/>
 					</div>
@@ -55,6 +62,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								Sign in
 							</button>
 						</div>
+					</div>
+					<div class="create-account">
+						<a href ="www.google.com">Create account?</a>
 					</div>
 				</form>
 			</div>
