@@ -20,22 +20,34 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->helper('url');
+		$this->load->view('login');
 	}
 	public function register_user()
 	{
+		$this->load->helper('url');
+
 		$this->load->view('register_user');
 	}
-	public function login()
-	{
-		$this->load->view('login');
-	}
+	// public function login()
+	// {
+	// 	$this->load->view('login');
+	// }
 	public function questions()
 	{
+		$this->load->helper('url');
+
 		$this->load->view('questionair');
 	}
 	public function code_authentication()
 	{
+		$this->load->helper('url');
 		$this->load->view('color_pattren');
 	}
+	public function book_appointment()
+	{
+		$this->load->helper('url');
+		$this->load->view('book_appointment');
+	}
+	
 }

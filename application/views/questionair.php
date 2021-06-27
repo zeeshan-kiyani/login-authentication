@@ -22,15 +22,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		form{font-family: Arial, Helvetica, sans-serif; color: black}
 		.bootstrap-iso form button, .bootstrap-iso
 		form button:hover{color: white !important;}.bootstrap-iso .form-control:focus { border-color: #2b90df;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(43, 144, 223, 0.6);} .asteriskField{color: red;}
+		.questionire {
+			position: relative;
+			margin-top: 15%;
+		}
+		.bg-body{
+    background-color: #f8f9fa!important;
+}
 	</style>
 </head>
-<body>
-<div class="bootstrap-iso">
+<body class="bg-body">
+<div class="bootstrap-iso bg-body">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row questionire">
 			<div class="col-md-6 col-sm-6 col-xs-12 offset-md-3">
-				<form method="post">
-					<div class="form-group" class = 'card p-3 bg-light'>
+				<form method="post" class = 'card p-3 '>
+					<div class="form-group" >
 						<h2> Verify its you.. </h2>
 						<label class="control-label requiredField" for="quiz">
 							Select a Question
@@ -54,8 +61,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<label class="control-label requiredField" for="answer">
 							Answer
 							<span class="asteriskField">
-        *
-       </span>
+							*
+						</span>
 						</label>
 						<input class="form-control" id="answer" name="answer" type="text"/>
 					</div>
