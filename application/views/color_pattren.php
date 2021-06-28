@@ -31,7 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		.green {
 			border: 1px solid black;
 			margin-right: 10px;
-			width: 90%;
+			width: 3rem;
 			height: 6rem;
 			background-color: green;
 		}
@@ -74,7 +74,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body class="bg-body">
-	<div class="bootstrap-iso">
+	<div class="bootstrap-iso bg-body">
 		<div class="container-fluid">
 			<div class="row color-pattern">
 				<div class="col-md-6 col-sm-6 col-xs-12 offset-md-3">

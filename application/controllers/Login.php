@@ -41,7 +41,7 @@ class Login extends CI_Controller {
 	}
 	public function code_authentication()
 	{
-		$this->load->helper('url');
+		$this->load->helper('url');	
 		$this->load->view('color_pattren');
 	}
 	public function book_appointment()

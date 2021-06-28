@@ -39,7 +39,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		}
 		.sign-up {
 			position: relative;
-			margin-top: 10%;
+			margin-top: 8%;
+		}
+		.form-group{
+			padding : 16px
 		}
 		.bg-body{
     background-color: #f8f9fa!important;

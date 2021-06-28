@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 		.sign-in {
 			position: relative;
-			margin-top: 15%;
+			margin-top: 10%;
 		}
 		.create-account {
 			text-align: right;
@@ -49,9 +49,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			height: 120px;
 			width: 120px
 		}
+		.form-group{
+			padding : 16px
+		}
 		body{
 			background-color: #f8f9fa!important;
 		}
+		h3{
+			font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+		}
+
 	</style>
 </head>
 
@@ -65,6 +72,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<form method="post" class='card p-3 '>
 								<center>
 									<img id="pic" src="<?php echo base_url() ?>/assets/img/profile.png" />
+									<h3>Login In</h3>
+									<h5>Login here using your username and password</h5>
 								</center>
 								<div class="form-group ">
 									<label class="control-label requiredField" for="email">
