@@ -37,13 +37,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row questionire">
 			<div class="col-md-6 col-sm-6 col-xs-12 offset-md-3">
 				<form method="post" class = 'card p-3 '>
-					<div class="form-group" >
+					<div class="form-group">
 						<h2> Verify its you.. </h2>
 						<label class="control-label requiredField" for="quiz">
 							Select a Question
 							<span class="asteriskField">
-        *
-       </span>
+								*
+							 </span>
 						</label>
 						<select class="select form-control" id="quiz" name="quiz">
 							<option value="What is your nickname?">

@@ -48,39 +48,50 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body class="bg-body">
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Book Appointment</a>
-  <form class="form-inline my-2 my-lg-0">
-      <ul>
-          <li>
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      </ul>
-        Dropdown
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
-    </div>
-    </div>
-          </li>
-  <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
-      </li>   
-      </ul>
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-    </form>
+<!--class="navbar navbar-dark bg-dark"-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+	<a class="navbar-brand" href="#">Book Appointment</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Notification
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="#">Notification 1</a>
+					<a class="dropdown-item" href="#">Notification 2</a>
+					<a class="dropdown-item" href="#">Notification 3</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="d-flex">
+		<a class="btn btn-primary btn-outline-light" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
+	</div>
+
+
 </nav>
-	<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-	<span class="border border-dark">
+
+	<span class="border ">
 		<div class="bootstrap-iso bg-body">
 			<div class="container-fluid">
 				<div class="row sign-up">
 					<div class="col-md-4 col-sm-4 col-xs-12 offset-md-4">
 						<form method="post" class='card p-3'>
-
 							<h2> Book Appointment </h2>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="name">

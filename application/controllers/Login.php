@@ -49,5 +49,10 @@ class Login extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('book_appointment');
 	}
+	public function appointment_logs()
+	{
+		$this->load->helper('url');
+		$this->load->view('appointment_logs');
+	}
 	
 }
