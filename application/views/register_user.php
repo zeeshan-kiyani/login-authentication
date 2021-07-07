@@ -59,7 +59,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row sign-up">
 					<div class="col-md-4 col-sm-4 col-xs-12 offset-md-4">
 						<form method="post" class='card p-3 '>
-
 							<h2> Create Your account </h2>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="name">
@@ -77,7 +76,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input class="form-control" id="email" name="email" type="text" />
+								<input type="email" class="form-control" name="email" placeholder="Email" required/>
 							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="name1">
@@ -86,7 +85,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input class="form-control" id="name1" name="name1" type="text" />
+								<input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required/>
+                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
 							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="name2">
@@ -95,8 +95,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input class="form-control" id="name2" name="name2" type="text" />
-							</div>
+								<input type="password" class="form-control" name="confirmpassword" placeholder="Password" minlength="8" required/>
+                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="gender">
 									Gender
@@ -115,9 +115,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class="form-group">
 								<div>
-									<a class="btn btn-primary" href="<?php echo base_url() ?>index.php/Login/code_authentication">
+								<input type="submit" name="save" class="btn btn-primary" value="Sign Up"/>
+									<!-- <a class="btn btn-primary" name="save" href="<?php echo base_url() ?>index.php/Login/code_authentication">
 										Sign Up
-									</a>
+									</a> -->
 								</div>
 							</div>
 
