@@ -85,7 +85,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required/>
+								<input type="password" class="form-control" name="password" placeholder="Password"  required/>
                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
 							</div>
 							<div class="form-group ">
@@ -95,7 +95,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input type="password" class="form-control" name="confirmpassword" placeholder="Password" minlength="8" required/>
+								<input type="password" class="form-control" name="confirmpassword" placeholder="Password"  required/>
                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="gender">
