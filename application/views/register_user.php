@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		}
 		.sign-up {
 			position: relative;
-			margin-top: 8%;
+			margin-top: 6%;
 		}
 		.form-group{
 			padding : 16px
@@ -58,7 +58,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="container-fluid">
 				<div class="row sign-up">
 					<div class="col-md-4 col-sm-4 col-xs-12 offset-md-4">
+
 						<form method="post" class='card p-3 '>
+							<h2>Step 1...</h2>
 							<h2> Create Your account </h2>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="name">
@@ -95,7 +97,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input type="password" class="form-control" name="confirmpassword" placeholder="Password"  required/>
+								<input type="password" class="form-control" name="confirm-password" placeholder="Password"  required/>
                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="gender">

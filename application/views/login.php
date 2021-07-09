@@ -82,7 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											*
 										</span>
 									</label>
-									<input class="form-control" id="email" name="email" type="text" />
+									<input class="form-control" id="emaill" name="email" type="text" />
 								</div>
 								<div class="form-group ">
 									<label class="control-label requiredField" for="name1">
@@ -91,18 +91,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											*
 										</span>
 									</label>
-									<input class="form-control" id="name1" name="name1" type="text" />
+									<input class="form-control" id="pass" name="password" type="password" />
 								</div>
+								<span class="form-group text-left">
+									<?php echo @$error; ?>
+								</span>
 								<div class="row"></div>
 								<div class="form-group">
-									<div>
-										<button class="btn btn-primary " name="submit" type="submit">
-											Sign in
-										</button>
+									<div>	
+										<input type="submit" class='btn btn-primary' name="login" value="Login"/></td>
 									</div>
 								</div>
 								<div class="create-account">
-									<a href="<?php echo base_url() ?>index.php/Login/register_user">Create account?</a>
+									<a href="<?php echo base_url() ?>index.php/Register/register_user">Create account?</a>
 								</div>
 							</form>
 						</div>

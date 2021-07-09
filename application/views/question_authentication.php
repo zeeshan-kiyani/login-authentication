@@ -67,9 +67,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</label>
 						<input class="form-control" id="answerr" name="answer" type="text"/>
 					</div>
+                    <span class="form-group text-left">
+						<?php echo @$error; ?>
+					</span>
 					<div class="form-group">
 						<div>
-							<input type="submit" name="save" class="btn btn-primary" value="Save Pattern"/>
+                        <input type="submit" class='btn btn-primary' name="login" value="Authenticate Pattern"/></td>
 						</div>
 					</div>
 				</form>

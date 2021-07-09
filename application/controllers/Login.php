@@ -3,62 +3,83 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	public function __construct() {
-		parent::__construct();
+		public function __construct() {
+			parent::__construct();
+			$this->load->helper('url');
+			$this->load->model('user_model');
+			$this->load->database();
+		}
+	public function patternAuthentication($user_id){
 		$this->load->helper('url');
-		$this->load->model('user_model');
-    }
+		if($this->input->post('login')){
+			$pattern=$this->input->post('pattern_code');
+			$que=$this->db->query("select * from users where pattern_password ='$pattern' and id = '$user_id'")->row();
+				if($que)
+				{
+					if($que->id){
+						if($que->status == 1 ){
+							redirect('login/questionAuthentication/'.$que->id);
+						}else{
+							redirect('login');
+						}
+					}
+				}
+				else
+				{
+					$data['error']="<small style='color:red'>Invalid Pattern Password !</small>";
+				}
+		}
+		$this->load->view('pattern_authentication',@$data);
+
+	}
+	public function questionAuthentication($user_id){
+		$this->load->helper('url');
+		if($this->input->post('login')){
+			$answer=$this->input->post('answer');
+			$que=$this->db->query("select * from users where question_password ='$answer' and id = '$user_id'")->row();
+			if($que)
+			{
+				if($que->id){
+					$this->session->set_userdata('userId', $que->id);
+					if($que->status == 1 ){
+						redirect('Appointments/book_appointment');
+					}else{
+						redirect('login');
+					}
+				}
+			}
+			else
+			{
+				$data['error']="<small style='color:red'>Invalid Answer  !</small>";
+			}
+		}
+		$this->load->view('question_authentication',@$data);
+	}
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('login');
-	}
-	public function register_user()
-	{
-		$this->load->helper('url');
-		$this->load->view('register_user');
-		if($this->input->post('save'))
+		if($this->input->post('login'))
 		{
-			$data['name']=$this->input->post('name');
-			$data['email']=$this->input->post('email');
-			$data['password']=$this->input->post('password');
-			$data['confirm-password']=$this->input->post('confirm-password');
-			$data['gender']=$this->input->post('gender');
-            $user=$this->user_model->registerUser($data);
-			if($user){
-			        $resp['customer_msg'] =  "user Saved Successfully";
-					// $this->load->view('navbar');
-					// $this->load->view('addCustomer',@$resp);
+			$email=$this->input->post('email');
+			$password=$this->input->post('password');
+			$que=$this->db->query("select * from users where email='$email' and password='$password'")->row();
+			if($que)
+			{
+				if($que->id){
+					// $this->session->set_userdata('userId', $que->id);
+					if($que->status == 1 ){
+						redirect('login/patternAuthentication/'.$que->id);
+					}else{
+						redirect('login');
+					}
+				}
 			}
-			else{
-					echo "Insert error !";
+			else
+			{
+				$data['error']="<small style='color:red'>Invalid Email or Password !</small>";
 			}
 		}
-	}
-	// public function login()
-	// {
-	// 	$this->load->view('login');
-	// }
-	public function questions()
-	{
-		$this->load->helper('url');
-
-		$this->load->view('questionair');
-	}
-	public function code_authentication()
-	{
-		$this->load->helper('url');	
-		$this->load->view('color_pattren');
-	}
-	public function book_appointment()
-	{
-		$this->load->helper('url');
-		$this->load->view('book_appointment');
-	}
-	public function appointment_logs()
-	{
-		$this->load->helper('url');
-		$this->load->view('appointment_logs');
+		$this->load->view('login',@$data);
 	}
 	
 }

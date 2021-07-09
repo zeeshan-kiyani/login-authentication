@@ -94,24 +94,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<form method="post" class='card p-3'>
 							<h2> Book Appointment </h2>
 							<div class="form-group ">
-								<label class="control-label requiredField" for="name">
+								<label class="control-label requiredField" for="doctor1">
 									Select Doctor
 									<span class="asteriskField">
 										*
 									</span>
 								</label>
-								<input class="form-control" id="name" name="name" type="text" />
+								<input class="form-control" id="doctor1" name="doctor_name" type="text" value="Jousha" placeholder="Jousha" disabled/>
 							</div>
 							<div class="form-group ">
                                 <div class="row">
                                 <div class="col-md-6">
-                                    <label class="control-label requiredField" for="name1">
+                                    <label class="control-label requiredField" for="age1">
                                         Age
                                         <span class="asteriskField">
                                             *
                                         </span>
                                     </label>
-                                    <input class="form-control" id="name1" name="name1" type="text" />
+                                    <input class="form-control" id="age1" name="age" type="text" />
                                 </div>
                                 <div class="col-md-6">
                                 <label class="control-label requiredField" for="gender">
@@ -136,13 +136,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								
 							</div>
                             <div class="form-group"> 
-                                <input class="form-control" id="name1" name="name1" type="Date" />
+                                <input class="form-control" id="date1" name="appointment_date" type="Date" />
                             </div>
 							<div class="form-group">
 								<div>
-									<a class="btn btn-primary" href="<?php echo base_url() ?>index.php/Login/code_authentication">
-										Sign Up
-									</a>
+								<input type="submit" class='btn btn-primary' name="book_appointment" value="Book Appointment"/>
 								</div>
 							</div>
 
