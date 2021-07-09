@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input class="form-control" id="name" name="name" type="text" />
+								<input class="form-control" id="name" name="name" placeholder="User Name" type="text" required />
 							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="email">

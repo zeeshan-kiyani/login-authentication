@@ -80,7 +80,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</ul>
 	</div>
 	<div class="d-flex">
-		<a class="btn btn-primary btn-outline-light" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
+		<a class="btn btn-primary btn-outline-light" href="<?php echo base_url()?>index.php/login/logout" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
 	</div>
 
 

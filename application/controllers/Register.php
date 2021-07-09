@@ -42,7 +42,7 @@ class Register extends CI_Controller {
 			$answer=$this->user_model->addAnswer($answer,$user_id);
 			// echo $answer;
 			if($answer){
-				redirect('Register/index'); 
+				redirect('Login/index'); 
 			}
 			
 		}
@@ -50,16 +50,17 @@ class Register extends CI_Controller {
 	public function code_authentication($user_id=null)
 	{	
 		$this->load->helper('url');	
-		$this->load->view('color_pattren');
 		if($this->input->post('save'))
 		{
 			$pattern =$this->input->post('pattern_code');
+			echo $pattern;
 			$pattern=$this->user_model->addSecurityPattern($pattern,$user_id);
 			if($pattern > 0){
 				redirect('Register/questions/'.$user_id); 
 			}
 			
 		}
+		$this->load->view('color_pattren');
 	}
 	public function book_appointment()
 	{

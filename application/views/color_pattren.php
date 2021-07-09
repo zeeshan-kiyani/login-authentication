@@ -90,9 +90,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</label>
 						</div>
 						<div class="row">
-							<div class="red col-md-2 offset-md-3"></div>
-							<div class="green col-md-2"></div>
-							<div class="blue col-md-2"></div>
+							<div onclick="inputPattern('red')" class="red col-md-2 offset-md-3"></div>
+							<div onclick="inputPattern('green')" class="green col-md-2"></div>
+							<div onclick="inputPattern('blue')" class="blue col-md-2"></div>
 						</div>
 						<div class="form-group ">
 							<label class="control-label requiredField" for="pattren_code">
@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									*
 								</span>
 							</label>
-							<input class="form-control" id="pattren_code" name="pattern_code" type="text" />
+							<input class="form-control" id="pattren_code" name="pattern_code" type="password" required />
 						</div>
 						<div class="form-group">
 							<div>
@@ -114,5 +114,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</div>
 	</div>
 </body>
+<script type='text/javascript'>
+function inputPattern(val){
+	if(val == 'red'){
+		document.getElementById("pattren_code").value += "red123";
+	}
+	else if(val == 'blue'){
+		document.getElementById("pattren_code").value += "blue123";
+
+	}
+	else if(val == 'green'){
+		document.getElementById("pattren_code").value += "green123";
+
+	}
+}
+</script>
 
 </html>
