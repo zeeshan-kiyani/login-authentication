@@ -69,7 +69,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input class="form-control" id="name" name="name" placeholder="User Name" type="text" required />
+								<input class="form-control" id="name" name="name" placeholder="User Name"  pattern="[a-zA-Z][a-zA-Z ]{2,}" type="text" required />
+								<small class="form-text text-muted">Your must contain letter only.</small>
 							</div>
 							<div class="form-group ">
 								<label class="control-label requiredField" for="email">
@@ -87,10 +88,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										*
 									</span>
 								</label>
-								<input type="password" class="form-control" name="password" placeholder="Password"  required/>
+								<input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required/>
                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
 							</div>
-							<div class="form-group ">
+							<!-- <div class="form-group ">
 								<label class="control-label requiredField" for="name2">
 									Confirm Password
 									<span class="asteriskField">
@@ -98,7 +99,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</span>
 								</label>
 								<input type="password" class="form-control" name="confirm-password" placeholder="Password"  required/>
-                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							</div>
+                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							
+							</div> -->
 							<div class="form-group ">
 								<label class="control-label requiredField" for="gender">
 									Gender

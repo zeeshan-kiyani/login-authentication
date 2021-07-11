@@ -10,7 +10,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
 	<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	
 	<style type="text/css">
 		.btn {
 			width: 100%;
@@ -67,40 +70,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="d-flex">
-		<a class="btn btn-primary btn-outline-light" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
+		<a class="btn btn-primary btn-outline-light" href="<?php echo base_url()?>index.php/login/logout" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
 	</div>
 </nav>
-<table id="app_logs"  class="table" >
+<div class="container" style="background-color: white;">
+<h2>Appointment Listing</h2>
+<table class="table table-hover" id="dataTables-example" width="100%">
 	<thead class="thead-dark">
 	<tr>
+		<th>Id</th>
+		<th>Doctor Name</th>
 		<th>Patient Name</th>
-		<th>Day</th>
-		<th>Time</th>
-		<th>Action</th>
+		<th>Date</th>
+		<th>Age</th>
+		<th>Gender</th>	
 	</tr>
 	</thead>
 	<tbody>
-	<tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	</tr>
+		<?php   $i=1;
+		foreach($appoinments as $row)
+		{
+			echo"<tr>";
+			echo "<td>".$i."</td>";
+			echo "<td>".'Yousha'."</td>";
+			echo "<td>".$row->patient_id."</td>";
+			echo "<td>".$row->appointment_date."</td>";
+			echo "<td>".$row->age."</td>";
+			echo "<td>".$row->gender."</td>";
+			echo "</tr>";
+			$i++;
+		}
+		?> 
 	</tbody>
 </table>
+</div>
 
 
 </body>
 
 </html>
+<!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
 <script>
 	$(document).ready( function () {
-		$('#app_logs').DataTable();
-	} );
+    $('#dataTables-example').DataTable();
+} );
+	// $(document).ready( function () {
+	// 	$('#dataTables-example').DataTable();
+	// } );
 </script>

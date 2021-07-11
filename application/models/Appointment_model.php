@@ -14,4 +14,8 @@
       $this->db->insert('doctor_appointment',$data);
       return $this->db->insert_id();
     }
+    public function getAllApointments(){
+      $output=$this->db->query('SELECT da.* ,u.user_name from doctor_appointment da inner join users u on da.patient_id = u.id')->result();
+      return $output;
+    }
  }

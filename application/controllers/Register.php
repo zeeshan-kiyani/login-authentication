@@ -16,8 +16,8 @@ class Register extends CI_Controller {
 		{
 			$data['user_name']=$this->input->post('name');
 			$data['email']=$this->input->post('email');
-			$data['password']=$this->input->post('password');
-			$data['confirm-password']=$this->input->post('confirm-password');
+			$data['password']=md5($this->input->post('password'));
+			// $data['confirm-password']=$this->input->post('confirm-password');
 			$data['gender']=$this->input->post('gender');
             $user=$this->user_model->registerUser($data);
 			if($user){
@@ -35,10 +35,9 @@ class Register extends CI_Controller {
 	public function questions($user_id=null)
 	{
 		$this->load->helper('url');
-		$this->load->view('questionair');
 		if($this->input->post('save'))
 		{
-			$answer =$this->input->post('answer');
+			$answer =md5($this->input->post('answer'));
 			$answer=$this->user_model->addAnswer($answer,$user_id);
 			// echo $answer;
 			if($answer){
@@ -46,13 +45,14 @@ class Register extends CI_Controller {
 			}
 			
 		}
+		$this->load->view('questionair');
 	}
 	public function code_authentication($user_id=null)
 	{	
 		$this->load->helper('url');	
 		if($this->input->post('save'))
 		{
-			$pattern =$this->input->post('pattern_code');
+			$pattern =md5($this->input->post('pattern_code'));
 			echo $pattern;
 			$pattern=$this->user_model->addSecurityPattern($pattern,$user_id);
 			if($pattern > 0){

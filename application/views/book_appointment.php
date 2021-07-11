@@ -62,10 +62,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
 	<a class="navbar-brand" href="#">Book Appointment</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+	</button> -->
+	<!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,8 +78,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</li>
 		</ul>
-	</div>
-	<div class="d-flex">
+	</div> -->
+	<div style="float: right;">
 		<a class="btn btn-primary btn-outline-light" href="<?php echo base_url()?>index.php/login/logout" data-auth-modal-tab="logout" data-mdb-dismiss="modal">Logout</a>
 	</div>
 
@@ -111,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             *
                                         </span>
                                     </label>
-                                    <input class="form-control" id="age1" name="age" type="text" />
+                                    <input class="form-control" id="age1" name="age" type="number" required />
                                 </div>
                                 <div class="col-md-6">
                                 <label class="control-label requiredField" for="gender">
@@ -136,13 +136,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								
 							</div>
                             <div class="form-group"> 
-                                <input class="form-control" id="date1" name="appointment_date" type="Date" />
+                                <input class="form-control" id="date1" name="appointment_date" type="Date" required/>
                             </div>
 							<div class="form-group">
 								<div>
 								<input type="submit" class='btn btn-primary' name="book_appointment" value="Book Appointment"/>
 								</div>
 							</div>
+							<span class="form-group text-left">
+									<?php echo @$appointment_msg; ?>
+							</span>
 
 						</form>
 					</div>
