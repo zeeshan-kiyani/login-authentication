@@ -4,6 +4,12 @@
     {
         parent::__construct();
     }
+    //delete user 
+    public function deleteUser($id){
+      $this->db->where('id',$id);
+      $result=$this->db->delete('users');
+      return $result;
+    }
     //update security pattern in users 
     public function addSecurityPattern($pattern,$id) {
         $this->db->set('pattern_password', $pattern);

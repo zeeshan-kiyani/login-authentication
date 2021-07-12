@@ -87,6 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<th>Gender</th>	
 		<th>Status</th>
 		<th>Action</th>
+		<th>Delete Patient</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -124,9 +125,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 				<div></div>
 				</div>
+				</div>
+				</div>
+			</td>";
+			echo " <td class='text-center'>
+			<a  data-toggle='modal' data-target='#DeleteModal".$row->patient_id."' class='btn btn-danger btn-rounded'>Delete</a>
+			<div id='DeleteModal".$row->patient_id."' class='modal fade' role='dialog'>
+			<div class='modal-dialog'>
+				<!-- Modal content-->
+				<div class='modal-content'>
+				<div class='modal-header'>
+					<h4 class='modal-title'>Block Customer</h4>
+					<button type='button' class='close' data-dismiss='modal'>&times;</button>
+				</div>
+				<div class='modal-body block-modal-body' style='text-align: justify'>
+					<p>Are You sure your want to delete this user?</p>
+				</div>
+				<div class='modal-footer'>
+					<a type='button' href='".base_url()."index.php/Register/deleteUser?id=".$row->patient_id."' class='btn btn-danger'>Delete</a>
+					<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+				</div>
+				</div>
 
 			</div>
-			</div>
+		</div>
 		</td>";
  
 	echo "</tr>";

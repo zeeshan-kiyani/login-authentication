@@ -7,19 +7,32 @@ class Register extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('user_model');
+		$this->load->model('appointment_model');
+		$this->load->library('form_validation');
     }
+	public function deleteUser(){
+		$id=$this->input->get('id');
+		$this->user_model->deleteUser($id);
+		$resp['appoinments'] = $this->appointment_model->getAllApointments();
+		$this->load->view('appointment_logs',@$resp);
+	}
 	public function register_user()
 	{
 		$this->load->helper('url');
 		$this->load->view('register_user');
 		if($this->input->post('save'))
 		{
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
+			if($this->form_validation->run() == FALSE){
+				redirect('Register/register_user/'.'EmailAlreadyExsist'); 
+			}
 			$data['user_name']=$this->input->post('name');
 			$data['email']=$this->input->post('email');
 			$data['password']=md5($this->input->post('password'));
 			// $data['confirm-password']=$this->input->post('confirm-password');
 			$data['contact_no']=$this->input->post('contact_no');
             $user=$this->user_model->registerUser($data);
+			echo $user;
 			if($user){
 				// echo $user;
 				redirect('Register/code_authentication/'.$user); 
