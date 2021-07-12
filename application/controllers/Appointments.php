@@ -14,10 +14,20 @@ class Appointments extends CI_Controller {
 		$resp['appoinments'] = $this->appointment_model->getAllApointments();
 		$this->load->view('appointment_logs',@$resp);
 	}
+	public function approveAppointment() {
+		$id=$this->input->get('id');
+		$this->appointment_model->approveAppointment($id);
+		$resp['appoinments'] = $this->appointment_model->getAllApointments();
+		$this->load->view('appointment_logs',@$resp);
+	}
+	public function rejectAppointment() {
+		$id=$this->input->get('id');
+		$this->appointment_model->rejectAppointment($id);
+		$resp['appoinments'] = $this->appointment_model->getAllApointments();
+		$this->load->view('appointment_logs',@$resp);
+	}
     public function book_appointment()
 	{
-
-		echo $this->session->userdata('userId');
 		if($this->session->userdata('userId') && $this->session->userdata('userId') !== NULL && $this->session->userdata('userId') !== ''){
 			if($this->input->post('book_appointment'))
 			{
@@ -38,7 +48,7 @@ class Appointments extends CI_Controller {
 		}
 		else{
 			$data['error']="<small style='color:red'>Login first to book the appointment!</small>";
-			$this->load->view('login',@$data);
+			redirect('/Login/Index',@$data);
 		}
-	}
+}
 }

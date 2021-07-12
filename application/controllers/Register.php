@@ -18,7 +18,7 @@ class Register extends CI_Controller {
 			$data['email']=$this->input->post('email');
 			$data['password']=md5($this->input->post('password'));
 			// $data['confirm-password']=$this->input->post('confirm-password');
-			$data['gender']=$this->input->post('gender');
+			$data['contact_no']=$this->input->post('contact_no');
             $user=$this->user_model->registerUser($data);
 			if($user){
 				// echo $user;
@@ -53,7 +53,6 @@ class Register extends CI_Controller {
 		if($this->input->post('save'))
 		{
 			$pattern =md5($this->input->post('pattern_code'));
-			echo $pattern;
 			$pattern=$this->user_model->addSecurityPattern($pattern,$user_id);
 			if($pattern > 0){
 				redirect('Register/questions/'.$user_id); 

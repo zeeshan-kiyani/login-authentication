@@ -83,21 +83,74 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<th>Patient Name</th>
 		<th>Date</th>
 		<th>Age</th>
+		<th>Contact No. </th>
 		<th>Gender</th>	
+		<th>Status</th>
+		<th>Action</th>
 	</tr>
 	</thead>
 	<tbody>
 		<?php   $i=1;
 		foreach($appoinments as $row)
 		{
+			if($row->status == 1){ $status = "Approved";}
+            else if($row->status == 2){ $status = "Rejected"; }
+            else { $status = "Pending"; }
 			echo"<tr>";
 			echo "<td>".$i."</td>";
 			echo "<td>".'Yousha'."</td>";
-			echo "<td>".$row->patient_id."</td>";
+			echo "<td>".$row->user_name."</td>";
 			echo "<td>".$row->appointment_date."</td>";
 			echo "<td>".$row->age."</td>";
+			echo "<td>".$row->contact_no."</td>";
 			echo "<td>".$row->gender."</td>";
-			echo "</tr>";
+			echo "<td>".$status."</td>";
+			echo " <td class='text-center'>
+			<a  data-toggle='modal' data-target='#orderEditModal".$row->id."' class='btn btn-success btn-rounded'>Accept/Reject</a>
+			<div id='orderEditModal".$row->id."' class='modal fade' role='dialog'>
+			<div class='modal-dialog'>
+				<!-- Modal content-->
+				<div class='modal-content'>
+				<div class='modal-header'>
+					<h4 class='modal-title'>Accept and reject the Appointment?</h4>
+					<button type='button' class='close' data-dismiss='modal'>&times;</button>
+				</div>
+				<div class='modal-body block-modal-body' style='text-align: justify'>
+					<p>Mark this order as complete?</p>
+				</div>
+				<div class='modal-footer'>
+					<a type='button' href='".base_url()."index.php/Appointments/approveAppointment/?id=".$row->id."' class='btn btn-success'  >Accept</a>
+					<a type='button' class='btn btn-danger' href='".base_url()."index.php/Appointments/rejectAppointment/?id=".$row->id."' class='btn btn-success'  >Reject</a>
+				</div>
+				<div></div>
+				</div>
+
+			</div>
+			<a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
+			<div id='tailorDeleteModal' class='modal fade' role='dialog'>
+				<div class='modal-dialog'>
+					<!-- Modal content-->
+					<div class='modal-content'>
+					<div class='modal-header'>
+						<h4 class='modal-title'>Block Tailor</h4>
+						<button type='button' class='close' data-dismiss='modal'>&times;</button>
+					</div>
+					<div class='modal-body block-modal-body' style='text-align: justify'>
+						<p>Are You sure your want to block this tailor?</p>
+					</div>
+					<div class='modal-footer'>
+						<a type='button' href='".base_url()."index.php/Appointments/acceptAppointment?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
+						<a type='button' href='".base_url()."index.php/Appointments/rejectAppointment?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
+					</div>
+					</div>
+
+				</div>
+			</div>
+		   
+			</div>
+		</td>";
+ 
+	echo "</tr>";
 			$i++;
 		}
 		?> 

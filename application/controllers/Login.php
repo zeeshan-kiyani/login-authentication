@@ -62,7 +62,7 @@ class Login extends CI_Controller {
 		{
 			$email=$this->input->post('email');
 			$password=md5($this->input->post('password'));
-			if($email === "yousha@admin.com" && $password === "e6e061838856bf47e1de730719fb2609"){
+			if($email == "yousha@admin.com" && $password == "741265da2e0878137335b9fd77c525ba"){
 				redirect('Appointments/appointments');
 			}
 			$que=$this->db->query("select * from users where email='$email' and password='$password'")->row();

@@ -102,20 +102,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>							
 							</div> -->
 							<div class="form-group ">
-								<label class="control-label requiredField" for="gender">
-									Gender
+								<label class="control-label requiredField" for="email">
+									Contact No
 									<span class="asteriskField">
 										*
 									</span>
 								</label>
-								<select class="select form-control" id="gender" name="gender">
-									<option value="Male">
-										Male
-									</option>
-									<option value="Female">
-										Female
-									</option>
-								</select>
+							<input type="text" placeholder="Contact Number" class="form-control" name="contact_no"  required/>
 							</div>
 							<div class="form-group">
 								<div>

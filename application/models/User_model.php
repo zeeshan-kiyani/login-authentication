@@ -25,7 +25,7 @@
       $this->db->set('email',$data['email'] );
       $this->db->set('password',$data['password'] );
     //   $this->db->set('confirm-password',$data['confirm-password'] );
-      $this->db->set('gender',$data['gender'] );
+      $this->db->set('contact_no',$data['contact_no'] );
       $this->db->insert('users',$data);
       return $this->db->insert_id();
     }

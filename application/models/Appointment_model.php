@@ -15,7 +15,17 @@
       return $this->db->insert_id();
     }
     public function getAllApointments(){
-      $output=$this->db->query('SELECT da.* ,u.user_name from doctor_appointment da inner join users u on da.patient_id = u.id')->result();
+      $output=$this->db->query('SELECT da.* ,u.user_name ,u.contact_no from doctor_appointment da inner join users u on da.patient_id = u.id')->result();
       return $output;
     }
+    public function approveAppointment($id){
+      $this->db->set('status', '1');
+      $this->db->where('id', $id);
+      $this->db->update('doctor_appointment');
+   }
+   public function rejectAppointment($id){
+    $this->db->set('status', '2');
+    $this->db->where('id', $id);
+    $this->db->update('doctor_appointment');
+ }
  }
