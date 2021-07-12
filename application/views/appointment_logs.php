@@ -116,7 +116,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<button type='button' class='close' data-dismiss='modal'>&times;</button>
 				</div>
 				<div class='modal-body block-modal-body' style='text-align: justify'>
-					<p>Mark this order as complete?</p>
+					<p>Mark this appointment as reject/accept?</p>
 				</div>
 				<div class='modal-footer'>
 					<a type='button' href='".base_url()."index.php/Appointments/approveAppointment/?id=".$row->id."' class='btn btn-success'  >Accept</a>
@@ -126,27 +126,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 
 			</div>
-			<a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
-			<div id='tailorDeleteModal' class='modal fade' role='dialog'>
-				<div class='modal-dialog'>
-					<!-- Modal content-->
-					<div class='modal-content'>
-					<div class='modal-header'>
-						<h4 class='modal-title'>Block Tailor</h4>
-						<button type='button' class='close' data-dismiss='modal'>&times;</button>
-					</div>
-					<div class='modal-body block-modal-body' style='text-align: justify'>
-						<p>Are You sure your want to block this tailor?</p>
-					</div>
-					<div class='modal-footer'>
-						<a type='button' href='".base_url()."index.php/Appointments/acceptAppointment?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
-						<a type='button' href='".base_url()."index.php/Appointments/rejectAppointment?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
-					</div>
-					</div>
-
-				</div>
-			</div>
-		   
 			</div>
 		</td>";
  
