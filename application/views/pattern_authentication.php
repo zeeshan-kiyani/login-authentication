@@ -81,7 +81,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<form method="post" class='card p-3'>
 						<div class="form-group" id="div_ckbox">
 							<h2>Step 2...</h2>
-							<h2> Create Your account </h2>
+							<h2> Login Your account </h2>
 							<label class="control-label requiredField" for="ckbox">
 								Select the pattren
 								<span class="asteriskField">

@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<form method="post" class = 'card p-3 '>					
 					<div class="form-group">
 						<h2>Step 3...</h2>
-						<h2> Create Your account </h2>
+						<h2> Login Your account </h2>
 						<label class="control-label requiredField" for="quiz">
 							Select a Question
 							<span class="asteriskField">
