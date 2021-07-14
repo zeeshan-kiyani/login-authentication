@@ -29,16 +29,11 @@ class Register extends CI_Controller {
 			$data['user_name']=$this->input->post('name');
 			$data['email']=$this->input->post('email');
 			$data['password']=md5($this->input->post('password'));
-			// $data['confirm-password']=$this->input->post('confirm-password');
 			$data['contact_no']=$this->input->post('contact_no');
             $user=$this->user_model->registerUser($data);
 			echo $user;
 			if($user){
-				// echo $user;
 				redirect('Register/code_authentication/'.$user); 
-			        // $resp['customer_msg'] =  "user Saved Successfully";
-					// $this->load->view('navbar');
-					// $this->load->view('addCustomer',@$resp);
 			}
 			else{
 					echo "Insert error !";

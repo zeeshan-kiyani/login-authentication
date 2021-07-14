@@ -105,7 +105,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 						<div class="form-group">
 							<div>
-							<input type="submit" name="save" class="btn btn-primary" value="Save Question"/>
+							<input type="submit" name="save" class="btn btn-primary" value="Save Pattern"/>
 							</div>
 						</div>
 					</form>
